@@ -8,11 +8,11 @@
  */
 
 char* escape(char* line_in, char c) {
-    size_t max_length_line_out = strlen(line_in) * 2;
+    size_t max_length_line_out = (strlen(line_in) * 2) + 1;
     char* line_out = (char *) malloc(sizeof(char) * max_length_line_out);
     int i;
     int j = 0;
-    for(i=0;i<strlen(line_in);i++) {
+    for(i=0;i<=strlen(line_in);i++) {
         if (*(line_in+i) == c) {
             *(line_out+j) = '\\';
             j++;
@@ -23,7 +23,7 @@ char* escape(char* line_in, char c) {
     return(line_out);
 }
 
-void main() {
+int main(int argc, char* argv[]) {
     char* line_in = "This is \"a test\"";
     char* line_out = escape(line_in, '"');
 
