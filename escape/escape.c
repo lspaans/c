@@ -24,7 +24,7 @@ char* escape(char* line_in, char c) {
 }
 
 int main(int argc, char* argv[]) {
-    char* line_in = "This is \"a test\"";
+    char line_in[] = "This is \"a test\"";
     char* line_out = escape(line_in, '"');
 
     printf("line_out = '%s'\n", line_out);
